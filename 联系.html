@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: rgb(222, 123, 33);
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script>
+			class XDTool {
+				getRandomColor() {
+					// 返回随机数颜色rgb()字符串
+					let random = () => {
+						return parseInt(Math.random() * 255 + 1);
+					};
+					return `rgb(${random()},${random()},${random()})`;
+				}
+
+				getMax(a, b) {
+					// 求2个数最大值
+					if (a > b) {
+						return a;
+					} else {
+						return b;
+					}
+				}
+
+				getArraySum(arr) {
+					// 传入数组, 在这里用forEach遍历求和返回
+					if (arr instanceof Array) {
+						let sum = 0;
+						arr.forEach(function (value) {
+							sum += value;
+						});
+						return sum;
+					} else {
+						alert('请输入数组');
+					}
+				}
+			}
+			let dd = new XDTool();
+			let div = document.querySelector('div');
+			div.style.backgroundColor = dd.getRandomColor();
+			console.log(dd.getRandomColor());
+
+			console.log(dd.getMax(5, 8));
+
+			console.log(dd.getArraySum([5, 8, 6, 2, 8, 3, 5, 8]));
+		</script>
+	</body>
+</html>
